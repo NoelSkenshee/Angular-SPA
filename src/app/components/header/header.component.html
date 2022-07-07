@@ -1,0 +1,54 @@
+<mat-toolbar color="primary">
+  <ul>
+
+  <li><img src="/assets/images/logo.png" width="70px" alt="logo"></li>
+    <li>
+      <button mat-icon-button class="example-icon" routerLinkActive="active" routerLink="/home">
+        <a>
+          <fa-icon [icon]="home"></fa-icon>
+          Home
+        </a>
+      </button>
+    </li>
+    <li>
+      <button mat-icon-button routerLinkActive="active"  class="example-icon" routerLink="/aboute">
+        <a>
+          <fa-icon [icon]="info"></fa-icon>
+          Aboute
+        </a>
+      </button>
+    </li>
+    <li>
+      <button mat-icon-button routerLinkActive="active"  class="example-icon" routerLink="/menu">
+        <a >
+          <fa-icon [icon]="menu"></fa-icon>
+          Menu
+        </a>
+      </button>
+    </li>
+    <li>
+      <button mat-icon-button routerLinkActive="active"  class="example-icon" routerLink="/contact">
+        <a >
+          <fa-icon [icon]="contact"> </fa-icon>
+          Cantact us
+        </a>
+      </button>
+    </li>
+  </ul>
+  <button mat-button (click)="openDialog()"><i class="fa-solid fa-right-to-bracket" ></i>
+</button>
+</mat-toolbar>
+<header>
+  <div><!--No soporta hgroup-->
+    <h1>
+     Mi negocio
+    </h1>
+    <p>
+      The app we build has two components. The parent component shows a list of customers. The user has the option to
+      click on the edit button, which results in a child component displaying the customer form Once the user updates
+      the records, the child component raises the event.
+    </p>
+  </div>
+  <img src="/assets/images/logo.png" alt="">
+
+</header>

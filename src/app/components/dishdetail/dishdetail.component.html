@@ -1,0 +1,58 @@
+<div class="close_bar"><button mat-button (click)="closeMorInfo()"><i class="fas fa-close"
+      style="color:red;font-size:2pc"></i></button> </div>
+      <p class="error" *ngIf="error">{{error}}</p>
+
+<div class="preview" *ngIf="!error">
+  <div class="morInfo">
+    <header class="elements2row">
+      <h1>{{dish.name}}</h1>
+    </header>
+    <mat-card>
+      <mat-card-header>
+      </mat-card-header>
+      <img [src]="dish.image" mat-card-image alt="">
+      <mat-card-content>
+        <p>{{dish.description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <i (click)="navLeft()" class="fa-solid fa-chevron-left"></i>
+
+        <button mat-button>LIKE</button>
+        <button mat-button>CHARE</button>
+
+        <i (click)="navRight()" class="fa-solid fa-chevron-right"></i>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+  <section>
+    <div class="comments">
+      <h1>Comments</h1>
+      <mat-list>
+        <mat-list-item *ngFor="let comment of dish.comments">
+          <p><b> {{comment.comment}} </b><br>{{comment.author}} - {{comment.date | date}}</p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+    <div class="addComment">
+      <p><b> {{formComment.value.comment}} </b><br>{{formComment.value.author}} - {{formComment.value.date | date}}</p>
+      <form #fcomment="ngForm" (ngSubmit)="save()" [formGroup]="formComment" step="1" min="1" max="5"
+        aria-label="units">
+
+        <mat-slider thumbLabel formControlName="ratting"></mat-slider>
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="author" placeholder="Youre name please" required>
+          <mat-error *ngIf="errors.author">{{errors.author}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <textarea rows="5" matInput formControlName="comment" placeholder="Youre comment here please"
+            required></textarea>
+          <mat-error *ngIf="errors.comment">{{ errors.comment }}</mat-error>
+        </mat-form-field>
+        <button mat-button type="submit" [disabled]="fcomment.form.invalid">Save</button>
+      </form>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,49 @@
+a{
+  color:white;
+  text-decoration: none;
+}
+ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+ul>li{
+  margin-right: 30px;
+}
+
+mat-toolbar{
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+header{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  background: #9072c5;
+  color: white;
+  box-shadow: 2px 1px 6px 0px #582baa;
+flex-wrap: wrap-reverse;
+}
+
+header>div{
+width: 50%;
+}
+
+.active{
+  background:none;
+  border: 2px solid;
+  border-radius:initial;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+}
+

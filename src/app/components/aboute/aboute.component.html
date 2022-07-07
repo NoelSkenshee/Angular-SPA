@@ -1,0 +1,72 @@
+<h2>About us</h2>
+<div class="container _animation">
+    <p class="error" *ngIf="error">{{error}}</p>
+    <div class="about" *ngIf="!error">
+      <p>
+      {{about.about}}<br>
+      </p>
+      <div>
+        <h3>Fat at a Glanse</h3>
+        <ul>
+          <li>
+            Inicio
+            <ul>
+              <li>Fecha de</li>
+            </ul>
+          </li>
+          <li>
+            Major state Holder
+            <ul>
+              <li>Agregar</li>
+            </ul>
+          </li>
+          <li>
+            Last years tomover
+            <ul>
+              <li>Agregar</li>
+            </ul>
+          </li>
+          <li>
+            Total empleado
+            <ul>
+              <li>Total</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div class="morInfo">
+
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h2> Single-page application</h2>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            In a SPA, a page refresh never occurs; instead, all necessary HTML, JavaScript, and CSS code is either
+            retrieved
+            by the browser with a single page load,[1] or the appropriate resources are dynamically loaded and added to
+            the
+            page as necessary, usually in response to user actions. </p>
+        </mat-card-content>
+      </mat-card>
+
+      <div>
+        <h2>Corporate Leader Sheap</h2>
+        <mat-list>
+
+          <mat-list-item *ngFor="let leader of leaders">
+            <img src="{{baseurl}}/{{leader.image}}" matListAvatar alt="saaaD">
+            <h3 mat-line>{{leader.name}}</h3>
+            <p mat-line> {{leader.about}}</p>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+</div>

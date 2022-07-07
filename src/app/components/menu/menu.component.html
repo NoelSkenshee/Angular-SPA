@@ -1,0 +1,25 @@
+<div class="container" fxLayout="column" fxLayoutGap="15px">
+
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="gappx" class="_animation">
+    <h1>Menu</h1>
+  </div>
+
+
+  <div  class="">
+
+    <mat-grid-list cols="2" rowHeight="200px" >
+      <mat-grid-tile (click)="morInfo(dish)" *ngFor="let dish of dishes" style="margin-bottom: 20px;" class="_animation"  appActiveEl>
+        <img src="{{urlbase}}/{{dish.image}}" class="img-fluid"   alt="{{dish.name}}">
+        <mat-grid-tile-footer>
+          <p>
+            {{ dish.name|uppercase}}
+          </p>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+  <!--<app-dishdetail *ngIf="selected[0]" class="preview" [dish]="selected[0]" (close)="closeMorInfo()"></app-dishdetail>-->
+
+
+</div>

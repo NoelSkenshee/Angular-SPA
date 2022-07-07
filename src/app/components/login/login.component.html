@@ -1,0 +1,23 @@
+
+
+<mat-toolbar color="primary">
+  <span>Login form</span>
+</mat-toolbar>
+<form novalidate #formLogin="ngForm" (ngSubmit)="login()">
+
+  <mat-form-field >
+  <input matInput #emailValidator="ngModel" required placeholder="label"  type="text"  [(ngModel)]="name" name="name">
+  <mat-error *ngIf="emailValidator.errors?.required" > The email is required</mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Youre password</mat-label>
+ <input required type="email"  #pass="ngModel"  matInput placeholder="Youre password" name="password" [(ngModel)]="password">
+ <mat-error *ngIf="pass.errors?.required">The field password is required</mat-error>
+</mat-form-field>
+
+
+  <button  [disabled]="formLogin.form.invalid" mat-button>LOGIN</button>
+
+
+</form>

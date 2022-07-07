@@ -1,0 +1,64 @@
+h2{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+h2>span{
+  color: #9072c5;
+    text-decoration: underline;
+}
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px;
+}
+.bookDiches{
+  width: 50%;
+  display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: flex-start;
+}
+
+
+.bookPromo{
+  width: 50%;
+  display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: flex-start;
+}
+.presentPageDish{
+  width: 50%;
+  background: gray;
+ transform: skewY(-6deg);
+}
+.nexPageDish{
+  width: 50%;
+  background: gray;
+transform: skewY(6deg);
+}
+
+
+.nexPagePromo{
+  width:50%;
+  background: gray;
+  transform: skewY(6deg);
+}
+
+
+.presentPagePromo{
+  width: 50%;
+  background: gray;
+  transform: skewY(-6deg);
+}
+mat-card{
+  box-shadow: -1px 6px 13px 0px black!important;
+  height: 100%!important;
+  transition: 3s ease-in;
+
+}

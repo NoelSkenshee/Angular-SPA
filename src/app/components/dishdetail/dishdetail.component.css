@@ -1,0 +1,67 @@
+
+
+mat-list-item:hover {
+  cursor: pointer;
+
+}
+
+mat-list-item {
+  color: black!important;
+  margin-top: 30px;
+}
+.container {
+  margin: 20px;
+  display: flex;
+}
+
+.preview {
+  width: 100%;
+  z-index: 5000;
+  display: flex!important;;
+  flex-direction: row!important;;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  align-items: stretch;
+  color: black;
+  box-sizing: initial!important;
+}
+
+.elements2row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+mat-card {
+  max-width: 400px;
+}
+
+mat-card-actions{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.comments{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.close_bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-end;
+}
+.addComment>form{
+  display: flex;
+  flex-direction: column;
+}
+
+.error{
+  color: red;
+  font-size: 34px;
+}

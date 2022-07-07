@@ -1,0 +1,94 @@
+<h2>
+
+<span>
+  Dishes Book
+</span>
+<span>
+  Promotions book
+</span>
+</h2>
+<div class="container"  >
+
+<div  class="bookDiches lefToRight">
+<div class="nexPageDish lefToRight"   *ngIf="dishesFeatured[pageDish]" >
+  <mat-card>
+    <img src="{{urlbase}}/{{dishesFeatured[pageDish].image}}" mat-card-image alt="">
+    <mat-card-content>
+      <p>{{dishesFeatured[pageDish].description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>CHARE</button>
+      <span> {{pageDish}}</span>
+    </mat-card-actions>
+  </mat-card>
+
+</div>
+<div class="presentPageDish" *ngIf="dishesFeatured && dishesFeatured[prevDish]" [@lefToRight]="'animationStateDish'">
+  <mat-card class="prev">
+    <img src="{{urlbase}}/{{dishesFeatured[prevDish].image}}" mat-card-image alt="">
+    <mat-card-content>
+      <p>{{dishesFeatured[prevDish].description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>CHARE</button>
+      <span> {{prevDish}}</span>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div  class="bookPromo rightToLeft">
+  <div class="nexPagePromo" *ngIf="promotionsFeatured && promotionsFeatured[pagePromo]">
+    <mat-card>
+      <img [src]="promotionsFeatured[pagePromo].image" mat-card-image alt="">
+      <mat-card-content>
+        <p>{{promotionsFeatured[pagePromo].description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>CHARE</button>
+        <span> {{pagePromo}}</span>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+  <div class="presentPagePromo" *ngIf="promotionsFeatured && promotionsFeatured[prevPromo]">
+    <mat-card>
+      <img src="{{urlbase}}/{{promotionsFeatured[prevPromo].image}}" mat-card-image alt="">
+      <mat-card-content>
+        <p>{{promotionsFeatured[prevPromo].description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>CHARE</button>
+        <span> {{prevPromo}}</span>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>

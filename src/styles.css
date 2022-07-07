@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+body {
+  font-family: Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+._animation {
+  animation: _animation 1s ease-in-out;
+  transition: ease-in-out 1s;
+}
+
+@keyframes _animation {
+  1%{
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.5) !important;
+  }
+}
+
+.animation_ {
+  animation: animation_ 2s ease-in-out;
+  transition: ease-in-out 1s;
+}
+
+@keyframes animation_ {
+  1% {
+    opacity: 1;
+    transform: scale(1.5) !important;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+.lefToRight {
+  animation: lefToRight 1s ease-in-out;
+  transition: 3s ease-in-out;
+}
+
+@keyframes lefToRight {
+  1% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.rightToLeft {
+  animation: rightToLeft 1s ease-in-out;
+  transition: 3s ease-in-out;
+}
+
+@keyframes rightToLeft {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  1% {
+    transform: translateX(100%);
+    opacity: 0.5;
+  }
+}

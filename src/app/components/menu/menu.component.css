@@ -1,0 +1,23 @@
+mat-list-item:hover{
+ background-color: rgb(195, 195, 240);
+ cursor: pointer;
+ transition: ease-in-out 500ms;
+ width: 100%;
+
+}
+
+.container{
+  margin: 20px;
+  display: flex;
+}
+
+
+mat-card{
+  max-width: 400px;
+
+}
+
+
+
+
+

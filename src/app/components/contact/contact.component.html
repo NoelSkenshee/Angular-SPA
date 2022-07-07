@@ -1,0 +1,85 @@
+<h2 style="padding:10px">
+  Contact us
+</h2>
+
+<p class="error" *ngIf="error">{{error}}</p>
+<div class="container-contact _animation" *ngIf="!error" >
+  <div class="contact">
+    <h3>
+      Location Information
+    </h3>
+    <address>
+      <i><i class="fas fa-home"></i>:Republica Dominicana, Santo Domingo </i><br>
+      <i><i class="fas fa-phone"></i>:+1 849-255-3917</i><br>
+      <i><i class="fas fa-phone"></i>:+1 849-255-3917</i><br>
+      <i><i class="fa-solid fa-envelope"></i>:nskenshee gmail.com</i>
+    </address>
+    <nav>
+      <button mat-button><i class="fas fa-phone"></i><a href="tel:+18492553917">Call</a></button>
+      <button mat-button><i class="fa-brands fa-skype"></i><a href="https://skype.com">Skype</a></button>
+      <button mat-button><i class="fa-solid fa-envelope"></i><a href="mailto:nskenshee gmail.com">Write</a></button>
+
+    </nav>
+  </div>
+   <div class="location">
+      <h3>Location not available</h3>
+   </div>
+
+   <div class="container">
+    {{data.errors|json}}
+    <form  #dataForm="ngForm" [formGroup]="data" (ngSubmit)="saveForm()">
+
+     <p class="row2col">
+
+      <mat-form-field appearance="fill">
+         <input matInput  formControlName="firstname" placeholder="First name" type="text" required>
+        <mat-error *ngIf="fieldsErrors.firstname">{{fieldsErrors.firstname}}</mat-error>
+        <mat-error *ngIf="data.get('firstname')?.hasError('maxlength89')">Length</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <input  matInput  formControlName="lastname" placeholder="Last Name" type="text" required>
+        <mat-error *ngIf="fieldsErrors.lastname">{{fieldsErrors.lastname}}</mat-error>
+      </mat-form-field>
+
+     </p>
+
+     <p class="row2col">
+
+      <mat-form-field apearance="fill">
+        <input matInput formControlName="telnum" placeholder="Tel. Number" type="tel" pattern="[0-9]*" required>
+        <mat-error *ngIf="fieldsErrors.telnum">{{fieldsErrors.telnum}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field apearance="fill">
+        <input matInput formControlName="email" placeholder="Youre Email" type="email" required >
+        <mat-error *ngIf="fieldsErrors.email">{{fieldsErrors.email}}</mat-error>
+      </mat-form-field>
+
+    </p>
+
+     <p class="row2col">
+
+       <mat-slide-toggle formControlName="agree" >May we contact you</mat-slide-toggle>
+
+       <mat-form-field  *ngIf="data.value.agree" >
+       <mat-select forControlName="contacttype">
+          <mat-option *ngFor="let opt of contactoptions" [value]="opt">
+             {{opt}}
+          </mat-option>
+       </mat-select>
+      </mat-form-field>
+    </p>
+    <p>
+    <mat-form-field apearance="fill">
+      <textarea formControlName="message" matInput rows="12"></textarea>
+      <mat-error *ngIf="data.get('message')?.errors?.minlength"> Min length required 100 character</mat-error>
+    </mat-form-field>
+     </p>
+     <p>
+      <button mat-button type="submit" [disabled]="dataForm.form.invalid">Save</button>
+
+     </p>
+</form>
+   </div>
+</div>
